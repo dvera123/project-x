@@ -34,6 +34,17 @@
     <bean name="homeController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="home" />
+    
+    <!--
+    The Test Case controller.
+    -->
+    <bean id="myTestCaseDAO" class="com.projectx.model.implement.TestCaseDAOImpl">
+       
+    </bean>
+    
+    <bean name="/testcase/*.do" class="com.projectx.controller.TestCaseController" >
+        <property name="testCaseDAO" ref="myTestCaseDAO" />
+    </bean>
           
    
 </beans>

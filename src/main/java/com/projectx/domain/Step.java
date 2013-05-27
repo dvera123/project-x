@@ -12,9 +12,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -47,9 +47,9 @@ public class Step implements Serializable {
     @Basic(optional = false)
     @Column(name = "action")
     private String action;
-    @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
-    @OneToOne(optional = false)
-    private StepStatus stepStatus;
+    @JoinColumn(name = "fk_step_status", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private StepStatus fkStepStatus;
 
     public Step() {
     }
@@ -97,12 +97,12 @@ public class Step implements Serializable {
         this.action = action;
     }
 
-    public StepStatus getStepStatus() {
-        return stepStatus;
+    public StepStatus getFkStepStatus() {
+        return fkStepStatus;
     }
 
-    public void setStepStatus(StepStatus stepStatus) {
-        this.stepStatus = stepStatus;
+    public void setFkStepStatus(StepStatus fkStepStatus) {
+        this.fkStepStatus = fkStepStatus;
     }
 
     @Override

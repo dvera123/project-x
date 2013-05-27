@@ -12,9 +12,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -43,9 +43,9 @@ public class TestCase implements Serializable {
     @Basic(optional = false)
     @Column(name = "description")
     private String description;
-    @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
-    @OneToOne(optional = false)
-    private TestCaseStatus testCaseStatus;
+    @JoinColumn(name = "fk_test_case_status", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private TestCaseStatus fkTestCaseStatus;
 
     public TestCase() {
     }
@@ -84,12 +84,12 @@ public class TestCase implements Serializable {
         this.description = description;
     }
 
-    public TestCaseStatus getTestCaseStatus() {
-        return testCaseStatus;
+    public TestCaseStatus getFkTestCaseStatus() {
+        return fkTestCaseStatus;
     }
 
-    public void setTestCaseStatus(TestCaseStatus testCaseStatus) {
-        this.testCaseStatus = testCaseStatus;
+    public void setFkTestCaseStatus(TestCaseStatus fkTestCaseStatus) {
+        this.fkTestCaseStatus = fkTestCaseStatus;
     }
 
     @Override

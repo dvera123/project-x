@@ -6,7 +6,6 @@ package com.projectx.domain;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +13,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -39,8 +37,6 @@ public class TestCaseStatus implements Serializable {
     @Basic(optional = false)
     @Column(name = "name")
     private String name;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "testCaseStatus")
-    private TestCase testCase;
 
     public TestCaseStatus() {
     }
@@ -68,14 +64,6 @@ public class TestCaseStatus implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public TestCase getTestCase() {
-        return testCase;
-    }
-
-    public void setTestCase(TestCase testCase) {
-        this.testCase = testCase;
     }
 
     @Override
