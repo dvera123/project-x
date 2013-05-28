@@ -1,10 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>project-x</groupId>
-  <artifactId>project-x</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>project-x</groupId>
+	<artifactId>project-x</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<dependencies>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -80,14 +81,35 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.10</version>
+				<configuration>
+					<skipTests>true</skipTests>
+					<!-- exclude file one by one
+					<excludes>
+						<exclude>**/TestStep.java</exclude>
+					</excludes>
+					-->
+				</configuration>
+				<executions>
+					<execution>
+						<id>default-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
- <repositories>
-  <repository>
-   <url>http://ftp.ing.umu.se/mirror/eclipse/rt/eclipselink/maven.repo</url>
-   <id>eclipselink</id>
-   <layout>default</layout>
-   <name>Repository for library Library[eclipselink]</name>
-  </repository>
- </repositories>
+	<repositories>
+		<repository>
+			<url>http://ftp.ing.umu.se/mirror/eclipse/rt/eclipselink/maven.repo</url>
+			<id>eclipselink</id>
+			<layout>default</layout>
+			<name>Repository for library Library[eclipselink]</name>
+		</repository>
+	</repositories>
 </project>
