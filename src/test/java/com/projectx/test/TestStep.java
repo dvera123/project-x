@@ -40,7 +40,7 @@ public class TestStep {
 	
 	@Test
 	public void getStepById(){
-		
+
 		Query qr = session.getNamedQuery("TestCase.findAll");
         List l = qr.list();
         for(Object item: l){
@@ -70,6 +70,7 @@ public class TestStep {
         tr = session.beginTransaction();
         session.saveOrUpdate(testCase);
         tr.commit();
+
         
 	}
 
