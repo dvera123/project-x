@@ -41,9 +41,13 @@
     <bean id="myTestCaseDAO" class="com.projectx.model.implement.TestCaseDAOImpl">
        
     </bean>
+    <bean id="myTestCaseStatusDAO" class="com.projectx.model.implement.TestCaseStatusDAOImpl">
+       
+    </bean>
     
     <bean name="/testcase/*.do" class="com.projectx.controller.TestCaseController" >
         <property name="testCaseDAO" ref="myTestCaseDAO" />
+        <property name="testCaseStatusDAO" ref="myTestCaseStatusDAO" />
     </bean>
           
    

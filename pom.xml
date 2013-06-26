@@ -62,6 +62,11 @@
 			<artifactId>persistence-api</artifactId>
 			<version>1.0.2</version>
 		</dependency>
+		<dependency>
+			<groupId>poi-reader</groupId>
+			<artifactId>poi-reader</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -85,12 +90,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.10</version>
 				<configuration>
-					<skipTests>true</skipTests>
-					<!-- exclude file one by one
-					<excludes>
-						<exclude>**/TestStep.java</exclude>
-					</excludes>
-					-->
+					<skipTests>false</skipTests>
+					<!-- exclude file one by one <excludes> <exclude>**/TestStep.java</exclude> 
+						</excludes> -->
 				</configuration>
 				<executions>
 					<execution>
@@ -110,6 +112,12 @@
 			<id>eclipselink</id>
 			<layout>default</layout>
 			<name>Repository for library Library[eclipselink]</name>
+		</repository>
+		<repository>
+			<id>local-project-libraries</id>
+			<name>Local project libraries</name>
+			<url>file://${project.basedir}/lib</url>
+			<layout>default</layout>
 		</repository>
 	</repositories>
 </project>

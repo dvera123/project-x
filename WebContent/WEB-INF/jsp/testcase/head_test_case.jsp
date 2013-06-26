@@ -8,3 +8,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/testcase/test_case.css" />
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-header">
+	  	
+	  </div>
+	  <div class="modal-body">
+	  	<p>Content body</p>
+	  </div>
+	  <div class="modal-footer">
+	  </div>
+</div>
