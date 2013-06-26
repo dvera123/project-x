@@ -28,11 +28,15 @@ public class TestCaseDAOImpl implements TestCaseDAO{
 	public void updateTestCase(TestCase testCase) {
 		Transaction tr = null;
         tr = session.beginTransaction();
+
+        session.saveOrUpdate(testCase);
+/*
         TestCase tc = (TestCase) session.get(TestCase.class,testCase.getId());
         tc.setName(testCase.getName());
         tc.setDescription(testCase.getDescription());
         tc.setFkTestCaseStatus(testCase.getFkTestCaseStatus());
         session.update(tc);
+*/
         tr.commit();
 		
 	}
@@ -49,6 +53,7 @@ public class TestCaseDAOImpl implements TestCaseDAO{
 
 	@Override
 	public List<TestCase> listTestCase() {
+		//session.flush();
 		Query qr = session.getNamedQuery("TestCase.findAll");
         return qr.list();
 	}

@@ -66,7 +66,7 @@ public class TestTestCase {
         TestCase testCase = (TestCase) l.get(0);
         System.out.print(testCase.getName());
 	}
-	
+	//@Test
 	private TestCase getTestCaseByID(int id){
 		Query qr = session.getNamedQuery("TestCase.findById");
         qr.setParameter("id", id);
@@ -74,7 +74,7 @@ public class TestTestCase {
         return (TestCase) l.get(0);
 		
 	}
-	@Test
+	//@Test
 	public void deleteTestCaseByID(){
 		Integer testCaseId = new Integer(4);
 		Transaction tr = null;
