@@ -6,6 +6,7 @@
 <head>
 
 <%@include file="head_test_case.jsp" %>
+<%@include file="modal_test_case.jsp" %>
 
 </head>
 <body>
@@ -13,7 +14,6 @@
 	<div id="testCaseList">
 		<%@include file="list_test_case.jsp" %>
 	</div>
-	
 	<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
 </body>
 </body>

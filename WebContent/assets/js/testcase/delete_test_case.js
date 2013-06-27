@@ -1,14 +1,13 @@
 $(document).ready(function(){
-	$('#testCase').submit(function(e){
+	//ajax call delete Test Case
+	$('.deleteTCForm').submit(function(e){
 		e.preventDefault();
 		$.ajax({
 			  type: 'POST',	
-			  url: "save.do",
-			  data: $('#testCase').serialize()
+			  url: "delete.do",
+			  data: $(this).serialize()
 			}).done(function(content) {
-				$('#myModal').modal('hide');  
 				$('#testCaseList').html(content);
 			});
 		});
-	
 });

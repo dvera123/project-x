@@ -2,3 +2,6 @@
 body{
 	background-color: gray;
 }
+.editTCForm{
+	float: left;
+}
