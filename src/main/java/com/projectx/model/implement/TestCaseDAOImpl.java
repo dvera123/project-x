@@ -29,14 +29,14 @@ public class TestCaseDAOImpl implements TestCaseDAO{
 		Transaction tr = null;
         tr = session.beginTransaction();
 
-        session.saveOrUpdate(testCase);
-/*
+        //session.saveOrUpdate(testCase);
+
         TestCase tc = (TestCase) session.get(TestCase.class,testCase.getId());
         tc.setName(testCase.getName());
         tc.setDescription(testCase.getDescription());
         tc.setFkTestCaseStatus(testCase.getFkTestCaseStatus());
         session.update(tc);
-*/
+
         tr.commit();
 		
 	}

@@ -38,7 +38,7 @@ public class TestStep {
         
 	}
 	
-	@Test
+	//@Test
 	public void getStepById(){
 
 		Query qr = session.getNamedQuery("TestCase.findAll");

@@ -48,7 +48,7 @@ public class Step implements Serializable {
     @Column(name = "action")
     private String action;
     @JoinColumn(name = "fk_step_status", referencedColumnName = "id")
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = true)
     private StepStatus fkStepStatus;
 
     public Step() {
