@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.projectx.domain.Step;
 import com.projectx.domain.TestCase;
 import com.projectx.domain.TestCaseStatus;
 import com.projectx.util.HibernateUtil;
@@ -38,22 +39,24 @@ public class TestStep {
         
 	}
 	
-	//@Test
+	@Test
 	public void getStepById(){
 
-		Query qr = session.getNamedQuery("TestCase.findAll");
+		Query qr = session.getNamedQuery("Step.findByFkTestCase");
+
+		qr.setParameter("fkTestCase", new TestCase(83));
         List l = qr.list();
         for(Object item: l){
-        	//System.out.println(item.toString());
+        	System.out.println(((Step)item).getAction());
         }
-        String a = "000125";
+        /*String a = "000125";
         int b = Integer.parseInt(a);
         System.out.println(b);
         System.out.println(b);
         System.out.println(b);
         System.out.println(b);
         System.out.println(b);
-        System.out.println(b);
+        System.out.println(b);*/
         
 	}
 	

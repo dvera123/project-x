@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Step.findAll", query = "SELECT s FROM Step s"),
+    @NamedQuery(name = "Step.findByFkTestCase", query = "SELECT s FROM Step s WHERE s.fkTestCase = :fkTestCase"),
     @NamedQuery(name = "Step.findById", query = "SELECT s FROM Step s WHERE s.id = :id"),
     @NamedQuery(name = "Step.findByNum", query = "SELECT s FROM Step s WHERE s.num = :num"),
     @NamedQuery(name = "Step.findByDescription", query = "SELECT s FROM Step s WHERE s.description = :description"),
@@ -50,8 +51,11 @@ public class Step implements Serializable {
     @JoinColumn(name = "fk_step_status", referencedColumnName = "id")
     @ManyToOne(optional = true)
     private StepStatus fkStepStatus;
-
-    public Step() {
+    @JoinColumn(name = "fk_test_case", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private TestCase fkTestCase;
+    
+	public Step() {
     }
 
     public Step(Integer id) {
@@ -96,6 +100,14 @@ public class Step implements Serializable {
     public void setAction(String action) {
         this.action = action;
     }
+    
+    public TestCase getFkTestCase() {
+		return fkTestCase;
+	}
+
+	public void setFkTestCase(TestCase fkTestCase) {
+		this.fkTestCase = fkTestCase;
+	}
 
     public StepStatus getFkStepStatus() {
         return fkStepStatus;

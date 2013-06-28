@@ -6,6 +6,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import com.projectx.domain.Step;
+import com.projectx.domain.TestCase;
 import com.projectx.model.dao.StepDAO;
 import com.projectx.util.HibernateUtil;
 
@@ -41,6 +42,13 @@ public class StepDAOImpl implements StepDAO{
 	public Step getStepByCriteria(int stepId) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Step> listStepByFkTestCase(TestCase testCase) {
+		Query qr = session.getNamedQuery("Step.findByFkTestCase");
+		qr.setParameter("fkTestCase", testCase);
+        return qr.list();
 	}
 
 }

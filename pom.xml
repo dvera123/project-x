@@ -108,12 +108,6 @@
 	</build>
 	<repositories>
 		<repository>
-			<url>http://ftp.ing.umu.se/mirror/eclipse/rt/eclipselink/maven.repo</url>
-			<id>eclipselink</id>
-			<layout>default</layout>
-			<name>Repository for library Library[eclipselink]</name>
-		</repository>
-		<repository>
 			<id>local-project-libraries</id>
 			<name>Local project libraries</name>
 			<url>file://${project.basedir}/lib</url>
