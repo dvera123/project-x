@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
 import com.projectx.domain.TestCase;
 import com.projectx.domain.TestCaseStatus;
+import com.projectx.model.dao.StepDAO;
 import com.projectx.model.dao.TestCaseDAO;
 import com.projectx.model.dao.TestCaseStatusDAO;
 
@@ -23,6 +24,7 @@ public class TestCaseController extends MultiActionController{
 	
 	private TestCaseDAO testCaseDAO;
 	private TestCaseStatusDAO testCaseStatusDAO;
+	private StepDAO stepDAO;
 	
 	public ModelAndView list(HttpServletRequest request,
             HttpServletResponse response) throws Exception {
@@ -109,13 +111,21 @@ public class TestCaseController extends MultiActionController{
 	public void setTestCaseDAO(TestCaseDAO testCaseDAO) {
 		this.testCaseDAO = testCaseDAO;
 	}
-	//Test Case Status DAO Impl
+	//Test Case Status DAO 
 	public TestCaseStatusDAO getTestCaseStatusDAO() {
 		return testCaseStatusDAO;
 	}
 
 	public void setTestCaseStatusDAO(TestCaseStatusDAO testCaseStatusDAO) {
 		this.testCaseStatusDAO = testCaseStatusDAO;
+	}
+	//Step DAO 
+	public StepDAO getStepDAO() {
+		return stepDAO;
+	}
+
+	public void setStepDAO(StepDAO stepDAO) {
+		this.stepDAO = stepDAO;
 	}
 
 }

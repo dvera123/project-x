@@ -20,16 +20,8 @@
 		<input type="submit" value="update">
 	</form:form>
 	<br/><br/><br/>
-	<h4>Steps</h4>
-	<form name="steps" id="steps">
-		<div>
-			<input type="text" name="num"/>
-			<input type="text" name="description"/>
-			<input type="text" name="action"/>
-			<input type="button" value="remove"/>
-			<input type="button" value="update"/>
-		</div>
-	</form>	
+	
+<%@include file="list_step_test_case.jsp" %>	
 
 	
 </body>
